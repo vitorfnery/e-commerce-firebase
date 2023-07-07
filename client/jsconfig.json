@@ -1,0 +1,40 @@
+{
+    "compilerOptions": {
+        "baseUrl": ".",
+        "paths": {
+            "~assets/*": [
+                "src/assets/*"
+            ],
+            "~/*": [
+                "src/*"
+            ],
+            "~containers/*": [
+                "src/containers/*"
+            ],
+            "~pages/*": [
+                "src/pages/*"
+            ],
+            "~api/*": [
+                "src/api/*"
+            ],
+            "~constants/*": [
+                "src/constants/*"
+            ],
+            "~components/*": [
+                "src/components/*"
+            ],
+            "~redux/*": [
+                "src/redux/*"
+            ],
+            "~ShopSlice/*": [
+                "src/redux/ShopSlice/*"
+            ],
+            "~Store/*": [
+                "src/redux/Store/*"
+            ],
+            "~CartItem/*": [
+                "src/components/CartItem/*"
+            ]
+        }
+    }
+}

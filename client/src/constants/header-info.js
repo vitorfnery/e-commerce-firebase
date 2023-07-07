@@ -1,0 +1,1 @@
+export const HEADER_ITEMS = ["Home", "Pages", "Shop", "Element", "Blog"]
