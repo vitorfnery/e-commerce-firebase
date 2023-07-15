@@ -15,7 +15,7 @@ const Footer = () => {
   const { copyright } = FOOTER_INTRO;
   return (
     <div className="bg-black text-primary py-20 font-titleFont">
-      <div className="px-16 2xl:max-w-screen-xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-x-8">
+      <div className="px-16 py-4 sm:py-7 2xl:max-w-screen-xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-20 gap-y-14">
         <div className="flex flex-col gap-7">
           <img className="w-12" src={logo} alt="logo" />
           <p className="text-white text-sm tracking-wide">{copyright}</p>
