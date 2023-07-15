@@ -1,4 +1,4 @@
-import { logo } from "~assets/index";
+import { logo } from "~assets";
 import { HEADER_ITEMS } from "~/constants";
 import { v4 } from "uuid";
 import { PiHandbagSimple } from "react-icons/pi";
@@ -85,7 +85,7 @@ const Header = () => {
           }
         >
           <Link to="/">
-            <img className="w-10" src={logo} alt="logo" />
+            <img className="w-10 ml-4 mt-3" src={logo} alt="logo" />
           </Link>
 
           {items.map((item) => (

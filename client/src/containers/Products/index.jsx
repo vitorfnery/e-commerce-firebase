@@ -17,7 +17,7 @@ const Products = ({ products }) => {
           hic iure.
         </p>
       </div>
-      <div className="max-w-screen-xl mx-auto py-10 grid grid-cols-2 md:grid-cols-4 gap-10">
+      <div className="max-w-screen-xl mx-auto py-10 px-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10">
         {products.map((item) => (
           <ProductsCard key={item._id} product={item} />
         ))}
