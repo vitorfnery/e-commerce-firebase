@@ -20,7 +20,7 @@ const Banner = () => {
       >
         {data.map((item) => (
           <SwiperSlide key={idGenerator()}>
-            <img className="h-[75%]" src={item.img} alt="" />
+            <img className="object-contain" src={item.img} alt="" />
           </SwiperSlide>
         ))}
       </Swiper>

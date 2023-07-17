@@ -1,5 +1,5 @@
 import { logo } from "~assets";
-import { HEADER_ITEMS } from "~/constants";
+import { HEADER_ITEMS, HEADER_IMG } from "~/constants";
 import { v4 } from "uuid";
 import { PiHandbagSimple } from "react-icons/pi";
 import { IoClose, IoMenu } from "react-icons/io5";
@@ -9,6 +9,7 @@ import { useState } from "react";
 
 const Header = () => {
   const items = HEADER_ITEMS;
+  const chartImg = HEADER_IMG;
   const idGenerator = v4;
   const [open, setOpen] = useState(false);
   const productData = useSelector((state) => state.shop.productData);
@@ -53,11 +54,7 @@ const Header = () => {
           <Link to={"/login"}>
             <img
               className="w-8 h-8 rounded-full"
-              src={
-                userInfo
-                  ? userInfo.image
-                  : "https://images.pexels.com/photos/264547/pexels-photo-264547.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-              }
+              src={userInfo ? userInfo.image : chartImg}
               alt="userLogo"
             />
           </Link>

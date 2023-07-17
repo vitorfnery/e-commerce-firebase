@@ -1,0 +1,4 @@
+export const PRODUCTS_INFO = {
+    title: "that's shopping",
+    main: "Welcome to our dynamic and diverse e-commerce page, where we offer an extensive collection of fast-fashion items that reflect the ever-evolving trends and styles. Our commitment to providing top-notch quality sets us apart, ensuring that each product you find on our platform meets the highest standards. What truly sets us apart is our dedication to celebrating the beauty of ethnic diversity. Our curated collection boasts a wide range of fashion-forward pieces inspired by various cultures, allowing you to explore and embrace different styles from around the world. With our e-commerce page, you can effortlessly express your individuality and stay ahead of the fashion curve, all while celebrating the vibrant tapestry of global fashion."
+}

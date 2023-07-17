@@ -1,5 +1,10 @@
 import { creditCards, logo } from "~assets/index";
-import { FOOTER_INTRO } from "~/constants";
+import {
+  FOOTER_INTRO,
+  FOOTER_LOCATE,
+  FOOTER_PROFILE,
+  FOOTER_SUBSCRIBE,
+} from "~/constants";
 import { ImGithub } from "react-icons/im";
 import {
   FaFacebook,
@@ -10,14 +15,20 @@ import {
 } from "react-icons/fa";
 import { MdLocationOn } from "react-icons/md";
 import { BsPersonFill, BsPaypal } from "react-icons/bs";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   const { copyright } = FOOTER_INTRO;
+  const footerLocate = FOOTER_LOCATE;
+  const footerProfile = FOOTER_PROFILE;
+  const { btn } = FOOTER_SUBSCRIBE;
   return (
     <div className="bg-black text-primary py-20 font-titleFont">
       <div className="px-16 py-4 sm:py-7 2xl:max-w-screen-xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-20 gap-y-14">
         <div className="flex flex-col gap-7">
-          <img className="w-12" src={logo} alt="logo" />
+          <Link to={"/"}>
+            <img className="w-12" src={logo} alt="logo" />
+          </Link>
           <p className="text-white text-sm tracking-wide">{copyright}</p>
           <img className="w-56" src={creditCards} alt="Credit Cards Payment" />
           <div className="flex gap-5 text-lg text-gray-400">
@@ -29,44 +40,48 @@ const Footer = () => {
           </div>
         </div>
         <div>
-          <h2 className="text-2xl font-semibold text-white mb-4">locate us</h2>
+          <h2 className="text-2xl font-semibold text-white mb-4">
+            {footerLocate.title}
+          </h2>
           <div className="text-base flex flex-col gap-2">
-            <p>Curitiba, PR, Brasil</p>
-            <p>Mobile: +55 41 997668680</p>
-            <p>E-mail: vitorfelipenery@gmail.com</p>
-            <p>Phone: +55 41 32345678</p>
+            <p>{footerLocate.city}</p>
+            <p>{footerLocate.mobile}</p>
+            <p>{footerLocate.email}</p>
+            <p>{footerLocate.phone}</p>
           </div>
         </div>
         <div>
-          <h2 className="text-2xl font-semibold text-white mb-4">profile</h2>
+          <h2 className="text-2xl font-semibold text-white mb-4">
+            {footerProfile.title}
+          </h2>
           <div className="flex flex-col gap-2 text-base">
             <p className="flex items-center gap-3 hover:text-white duration-300 cursor-pointer">
               {" "}
               <span>
                 <BsPersonFill />{" "}
               </span>{" "}
-              my account
+              {footerProfile.account}
             </p>
             <p className="flex items-center gap-3 hover:text-white duration-300 cursor-pointer">
               {" "}
               <span>
                 <BsPaypal />{" "}
               </span>{" "}
-              checkout
+              {footerProfile.checkout}
             </p>
             <p className="flex items-center gap-3 hover:text-white duration-300 cursor-pointer">
               {" "}
               <span>
                 <FaHome />{" "}
               </span>{" "}
-              order tracking
+              {footerProfile.track}
             </p>
             <p className="flex items-center gap-3 hover:text-white duration-300 cursor-pointer">
               {" "}
               <span>
                 <MdLocationOn />{" "}
               </span>{" "}
-              help & support
+              {footerProfile.help}
             </p>
           </div>
         </div>
@@ -77,7 +92,7 @@ const Footer = () => {
             type="text"
           />
           <button className="text-sm border text-white border-t-0 hover:bg-gray-900 active:bg-white active:text-black">
-            Subscribe
+            {btn}
           </button>
         </div>
       </div>
