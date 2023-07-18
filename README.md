@@ -16,7 +16,7 @@ The products data were fetched from [Fake Store API](https://fakestoreapiserver.
 
 ![preview](./.github/preview_stripe.gif)
 
-Available here: [React Authentication E-commerce - Vítor F. Nery](https://react-authentication-ecommerce-vitorfnery.netlify.app/)
+The project's UI is available here: [React Authentication E-commerce - Vítor F. Nery](https://authentication-ecommerce-vitorfnery.netlify.app/)
 
 ## 🛠️ Technologies 
 
