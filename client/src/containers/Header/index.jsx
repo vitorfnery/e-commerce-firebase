@@ -29,7 +29,7 @@ const Header = () => {
                 <li
                   className="
                       text-xs md:text-base text-black font-bold 
-                      hover:text-orange-900 hover:underline 
+                      hover:text-yellow-500 hover:underline 
                       underline-offset-2 decoration-[1px] cursor-pointer duration-300
                         "
                 >
@@ -86,7 +86,14 @@ const Header = () => {
           </Link>
 
           {items.map((item) => (
-            <li className="p-4 border-b border-gray-600" key={idGenerator()}>
+            <li
+              className="
+                        p-4 border-b border-gray-600 text-xs md:text-base text-black font-bold 
+                      hover:text-yellow-500 hover:underline 
+                        underline-offset-2 decoration-[1px] cursor-pointer duration-300
+                        "
+              key={idGenerator()}
+            >
               <Link className="" to={"/"}>
                 {item}
               </Link>
