@@ -12,7 +12,7 @@ import { addUser, removeUser } from "~/redux/ShopSlice";
 import { useNavigate } from "react-router-dom";
 
 const Login = () => {
-  const { google, github, signOut } = LOGIN_INFO;
+  const { google, github, signOutTxt } = LOGIN_INFO;
   const userInfo = useSelector((state) => state.shop.userInfo);
   const navigate = useNavigate("");
   const dispatch = useDispatch();
@@ -72,7 +72,7 @@ const Login = () => {
             onClick={handleSignOut}
             className="bg-black text-white text-base py-3 px-8 tracking-wide rounded-md hover:bg-gray-800 duration-300"
           >
-            {signOut}
+            {signOutTxt}
           </button>
         )}
       </div>
@@ -86,7 +86,7 @@ const Login = () => {
         </div>
         {userInfo && (
           <button className="bg-black text-white text-base py-3 px-8 tracking-wide rounded-md hover:bg-gray-800 duration-300">
-            {signOut}
+            {signOutTxt}
           </button>
         )}
       </div>
