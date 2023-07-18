@@ -1,20 +1,20 @@
 # E-commerce - React & Tailwind 🛒👜🛒👜
 
-![preview](../E-commerce%20firebase/client/../../E-commerce%20firebase/client/.github/preview_intro.gif)
+![preview](./.github/preview_intro.gif)
 
 > # Description 
 
-This project is a responsive e-commerce website. The user can: view information about each product and add / remove products from the cart. The user can needs to login the page to proceed to the checkout.
-I styled the landing page with Tailwind CSS and built it with React Js. Also, Tailwind CSS helped with the responsiveness of the website. I created the routes to the other pages with react-router-dom. The entire UI of the project was implemented in the client folder. 
-The authentication was impelemented using Firebase and the payment with Stripe. The user needs to athenticate with Firebase before the payment.
+This project is a responsive e-commerce website. Users can view information about each product and add/remove products from the cart. Users need to log in to proceed to the checkout.
+I styled the landing page with Tailwind CSS and built it with React JS. Tailwind CSS also helped with the website's responsiveness. I created routes to the other pages using react-router-dom. The entire UI of the project was implemented in the client folder.
+Authentication was implemented using Firebase, and payment was integrated with Stripe. Users need to authenticate with Firebase before making a payment.
 The products data were fetched from [Fake Store API](https://fakestoreapiserver.reactbd.com/products).   
 
 
-![preview](../E-commerce%20firebase/client/../../E-commerce%20firebase/client/.github/preview_cart.gif)
+![preview](./.github/preview_cart.gif)
 
-![preview](../E-commerce%20firebase/client/../../E-commerce%20firebase/client/.github/preview_payment.gif)
+![preview](./.github/preview_payment.gif)
 
-![preview](../E-commerce%20firebase/client/../../E-commerce%20firebase/client/.github/preview_stripe.gif)
+![preview](./.github/preview_stripe.gif)
 
 Available here: [React Authentication E-commerce - Vítor F. Nery](https://react-authentication-ecommerce-vitorfnery.netlify.app/)
 
