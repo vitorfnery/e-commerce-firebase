@@ -1,4 +1,10 @@
-import { CART_BACKGROUND } from "~/constants";
+import {
+  CART_BACKGROUND,
+  CART_INFO,
+  CART_EMPTY,
+  TOAST_ERROR,
+  PAYMENT_POST,
+} from "~/constants";
 import { useSelector } from "react-redux";
 import { HiOutlineArrowLeft } from "react-icons/hi";
 import { Link } from "react-router-dom";
@@ -10,6 +16,10 @@ import axios from "axios";
 
 const Cart = () => {
   const { url, description } = CART_BACKGROUND;
+  const { title, info1, info2, shipping, total, checkout } = CART_INFO;
+  const { main, btn } = CART_EMPTY;
+  const toastErrorMsg = TOAST_ERROR;
+  const paymentPost = PAYMENT_POST;
   const productData = useSelector((state) => state.shop.productData);
   const userInfo = useSelector((state) => state.shop.userInfo);
   const [payNow, setPayNow] = useState(false);
@@ -26,11 +36,11 @@ const Cart = () => {
     if (userInfo) {
       setPayNow(true);
     } else {
-      toast.error("Please sign in to Checkout");
+      toast.error(toastErrorMsg);
     }
   };
   const payment = async (token) => {
-    await axios.post("http://localhost:8000/pay", {
+    await axios.post(paymentPost, {
       amount: totalAmt * 100,
       token: token,
     });
@@ -44,29 +54,26 @@ const Cart = () => {
           <CartItem />
           <div className="w-1/3 bg-[#fafafa] py-6 px-4">
             <div className=" flex flex-col gap-6 border-b-[1px] border-b-gray-400 pb-6">
-              <h2 className="text-2xl font-medium ">cart totals</h2>
+              <h2 className="text-2xl font-medium ">{title}</h2>
               <p className="flex items-center gap-4 text-base">
-                Subtotal{" "}
+                {info1}
                 <span className="font-titleFont font-bold text-lg">
                   ${totalAmt}
                 </span>
               </p>
               <p className="flex items-start gap-4 text-base">
-                Shipping{" "}
-                <span>
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                  Quos, veritatis.
-                </span>
+                {info2}
+                <span>{shipping}</span>
               </p>
             </div>
             <p className="font-titleFont font-semibold flex justify-between mt-6">
-              Total <span className="text-xl font-bold">${totalAmt}</span>
+              {total} <span className="text-xl font-bold">${totalAmt}</span>
             </p>
             <button
               onClick={handleCheckout}
               className="text-base bg-black text-white w-full py-3 mt-6 hover:bg-gray-800 duration-300"
             >
-              proceed to checkout
+              {checkout}
             </button>
             {payNow && (
               <div className="w-full mt-6 flex items-center justify-center">
@@ -86,15 +93,14 @@ const Cart = () => {
       ) : (
         <div className="max-w-screen-xl mx-auto py-10 flex flex-col items-center gap-2 justify-center">
           <p className="text-xl text-orange-600 font-titleFont font-semibold">
-            Your Cart is Empty. Please go back to Shopping and add products to
-            Cart.
+            {main}
           </p>
           <Link to="/">
             <button className="flex items-center gap-1 text-gray-400 hover:text-black duration-300">
               <span>
                 <HiOutlineArrowLeft />
               </span>
-              go shopping
+              {btn}
             </button>
           </Link>
         </div>
