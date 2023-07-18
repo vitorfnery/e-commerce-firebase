@@ -20,3 +20,11 @@ export const CART_EMPTY = {
     main: " Your Cart is Empty. Please go back to Shopping and add products to Cart.",
     btn: "go shopping"
 }
+
+export const CART_SHOP = {
+    title: "shopping cart",
+    reduce: "-",
+    add: "+",
+    resetBtn: "Reset Cart",
+    homeBtn:"go shopping"
+}

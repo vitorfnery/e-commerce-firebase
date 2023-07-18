@@ -5,3 +5,4 @@ export * from '~constants/cart-info.js';
 export * from '~constants/products-info.js';
 export * from '~constants/product-card-info.js';
 export * from '~constants/product-info.js';
+export * from '~constants/login-info.js';

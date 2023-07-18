@@ -1,3 +1,4 @@
+import { LOGIN_INFO } from "~/constants";
 import { githubLogo, googleLogo } from "~assets/index";
 import {
   GoogleAuthProvider,
@@ -11,12 +12,12 @@ import { addUser, removeUser } from "~/redux/ShopSlice";
 import { useNavigate } from "react-router-dom";
 
 const Login = () => {
+  const { google, github, signOut } = LOGIN_INFO;
   const userInfo = useSelector((state) => state.shop.userInfo);
   const navigate = useNavigate("");
   const dispatch = useDispatch();
   const auth = getAuth();
   const provider = new GoogleAuthProvider();
-  // ============== Google Login Start here =====================
   const handleLogin = () => {
     signInWithPopup(
       auth,
@@ -42,8 +43,6 @@ const Login = () => {
         console.log(error);
       });
   };
-  // ============== Google Login End here =======================
-  // ============== Logout Start here ===========================
   const handleSignOut = () => {
     signOut(auth)
       .then(() => {
@@ -55,13 +54,9 @@ const Login = () => {
         console.log(error);
       });
   };
-  // ============== Logout End here =============================
-
-  // ============== Github Login Start here =====================
   const githubLogin = (e) => {
     e.preventDefault();
   };
-  // ============== Github Login End here =======================
   return (
     <div className="w-full flex flex-col items-center justify-center gap-10 py-20">
       <div className="w-full flex items-center justify-center gap-10">
@@ -70,14 +65,14 @@ const Login = () => {
           className="text-base w-60 h-12 tracking-wide border-[1px] border-gray-400 rounded-md flex items-center justify-center gap-2 hover:border-blue-600 cursor-pointer duration-300"
         >
           <img className="w-8" src={googleLogo} alt="googleLogo" />
-          <span className="text-sm text-gray-900"> Sign in with Google</span>
+          <span className="text-sm text-gray-900">{google}</span>
         </div>
         {userInfo && (
           <button
             onClick={handleSignOut}
             className="bg-black text-white text-base py-3 px-8 tracking-wide rounded-md hover:bg-gray-800 duration-300"
           >
-            Sign Out
+            {signOut}
           </button>
         )}
       </div>
@@ -87,11 +82,11 @@ const Login = () => {
           className="text-base w-60 h-12 tracking-wide border-[1px] border-gray-400 rounded-md flex items-center justify-center gap-2 hover:border-blue-600 cursor-pointer duration-300"
         >
           <img className="w-8" src={githubLogo} alt="githubLogo" />
-          <span className="text-sm text-gray-900"> Sign in with Github</span>
+          <span className="text-sm text-gray-900">{github}</span>
         </div>
         {userInfo && (
           <button className="bg-black text-white text-base py-3 px-8 tracking-wide rounded-md hover:bg-gray-800 duration-300">
-            Sign Out
+            {signOut}
           </button>
         )}
       </div>

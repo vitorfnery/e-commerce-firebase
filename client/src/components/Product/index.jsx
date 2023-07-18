@@ -103,10 +103,10 @@ const Product = () => {
               {toChart}
             </button>
           </div>
-          <p className="text-base text-gray-500">
-            {category}
+          <div className="flex gap-2 text-base text-gray-500">
+            <span>{category}</span>
             <span className="font-medium capitalize">{details.category}</span>
-          </p>
+          </div>
         </div>
       </div>
       <ToastContainer

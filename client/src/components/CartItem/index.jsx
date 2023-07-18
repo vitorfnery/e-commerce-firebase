@@ -1,3 +1,4 @@
+import { CART_SHOP } from "~/constants";
 import { MdOutlineClose } from "react-icons/md";
 import { HiOutlineArrowLeft } from "react-icons/hi";
 import { Link } from "react-router-dom";
@@ -11,12 +12,13 @@ import {
 import { ToastContainer, toast } from "react-toastify";
 
 const CartItem = () => {
+  const { title, add, reduce, resetBtn, homeBtn } = CART_SHOP;
   const dispatch = useDispatch();
   const productData = useSelector((state) => state.shop.productData);
   return (
     <div className="w-2/3 pr-10">
       <div className="w-full">
-        <h2 className="font-titleFont text-2xl">shopping cart</h2>
+        <h2 className="font-titleFont text-2xl">{title}</h2>
         <div>
           <div>
             {productData.map((item) => (
@@ -58,7 +60,7 @@ const CartItem = () => {
                       }
                       className="border h-5 font-normal text-lg flex items-center justify-center px-2 hover:bg-gray-700 hover:text-white cursor-pointer duration-300 active:bg-black"
                     >
-                      -
+                      {reduce}
                     </span>
                     {item.quantity}
                     <span
@@ -76,7 +78,7 @@ const CartItem = () => {
                       }
                       className="border h-5 font-normal text-lg flex items-center justify-center px-2 hover:bg-gray-700 hover:text-white cursor-pointer duration-300 active:bg-black"
                     >
-                      +
+                      {add}
                     </span>
                   </div>
                 </div>
@@ -90,7 +92,7 @@ const CartItem = () => {
             }
             className="bg-red-500 text-white mt-8 ml-7 py-1 px-6 hover:bg-red-800 duration-300"
           >
-            Reset Cart
+            {resetBtn}
           </button>
         </div>
       </div>
@@ -99,7 +101,7 @@ const CartItem = () => {
           <span>
             <HiOutlineArrowLeft />
           </span>
-          go shopping
+          {homeBtn}
         </button>
       </Link>
       <ToastContainer
