@@ -1,3 +1,4 @@
+import { PRODUCT_CARD } from "~/constants";
 import { BsArrowRight } from "react-icons/bs";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
@@ -5,6 +6,7 @@ import { addToCart } from "~/redux/ShopSlice";
 import { ToastContainer, toast } from "react-toastify";
 
 const ProductsCard = ({ product }) => {
+  const { add, sale } = PRODUCT_CARD;
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const _id = product.title;
@@ -60,7 +62,7 @@ const ProductsCard = ({ product }) => {
                 ) & toast.success(`${product.title} is added`)
               }
             >
-              add to cart{" "}
+              {add}
               <span>
                 <BsArrowRight />
               </span>
@@ -73,7 +75,7 @@ const ProductsCard = ({ product }) => {
         <div className="absolute top-4 right-0">
           {product.isNew && (
             <p className="bg-black text-white font-semibold font-titleFont px-6 py-1">
-              Sale
+              {sale}
             </p>
           )}
         </div>

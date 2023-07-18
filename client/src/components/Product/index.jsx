@@ -1,3 +1,4 @@
+import { PRODUCT_SINGLE_PAGE } from "~/constants";
 import { useEffect, useState } from "react";
 import { MdOutlineStar } from "react-icons/md";
 import { useDispatch } from "react-redux";
@@ -6,6 +7,8 @@ import { addToCart } from "~/redux/ShopSlice";
 import { ToastContainer, toast } from "react-toastify";
 
 const Product = () => {
+  const { sale, quantity, reduce, add, toChart, category } =
+    PRODUCT_SINGLE_PAGE;
   const dispatch = useDispatch();
   const [details, setDetails] = useState({});
   let [baseQty, setBaseQty] = useState(1);
@@ -25,7 +28,7 @@ const Product = () => {
           <div className="absolute top-4 right-0">
             {details.isNew && (
               <p className="bg-black text-white font-semibold font-titleFont px-8 py-1">
-                Sale
+                {sale}
               </p>
             )}
           </div>
@@ -55,7 +58,7 @@ const Product = () => {
           <p className="text-base text-gray-500 -mt-3">{details.description}</p>
           <div className="flex gap-4">
             <div className="w-52 flex items-center justify-between text-gray-500 gap-4 border p-3">
-              <p className="text-sm">Quantity</p>
+              <p className="text-sm">{quantity}</p>
               <div className="flex items-center gap-4 text-sm font-semibold">
                 <button
                   className="
@@ -67,7 +70,7 @@ const Product = () => {
                     setBaseQty(baseQty === 1 ? (baseQty = 1) : baseQty--)
                   }
                 >
-                  -
+                  {reduce}
                 </button>
                 <span>{baseQty}</span>
                 <button
@@ -78,7 +81,7 @@ const Product = () => {
                             "
                   onClick={() => setBaseQty(baseQty++)}
                 >
-                  +
+                  {add}
                 </button>
               </div>
             </div>
@@ -97,11 +100,11 @@ const Product = () => {
                 ) & toast.success(`${details.title} is added`)
               }
             >
-              add to cart
+              {toChart}
             </button>
           </div>
           <p className="text-base text-gray-500">
-            Category:{" "}
+            {category}
             <span className="font-medium capitalize">{details.category}</span>
           </p>
         </div>
