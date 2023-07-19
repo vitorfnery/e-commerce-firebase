@@ -16,7 +16,7 @@ const CartItem = () => {
   const dispatch = useDispatch();
   const productData = useSelector((state) => state.shop.productData);
   return (
-    <div className="lg:w-2/3 md:pr-10">
+    <div className="lg:w-2/3 lg:pr-10 xl:pr-16 2xl:pr-24">
       <div className="w-full">
         <h2 className="font-titleFont text-2xl">{title}</h2>
         <div>
@@ -26,7 +26,7 @@ const CartItem = () => {
                 key={item._id}
                 className="flex flex-col lg:flex-row items-center justify-between gap-3 lg:gap-6 mt-6"
               >
-                <div className="flex flex-col sm:flex-row  items-center gap-1 sm:gap-2">
+                <div className="flex flex-col lg:flex-row  items-center gap-1 sm:gap-2">
                   <MdOutlineClose
                     onClick={() =>
                       dispatch(deleteItem(item._id)) &
@@ -35,7 +35,7 @@ const CartItem = () => {
                     className="text-xl text-gray-600 hover:text-red-600 cursor-pointer duration-300"
                   />
                   <img
-                    className="w-16 md:w-32 h-16 md:h-32 object-cover"
+                    className="w-32 h-16 h-32 object-cover"
                     src={item.image}
                     alt="productImg"
                   />
@@ -82,7 +82,7 @@ const CartItem = () => {
                     </span>
                   </div>
                 </div>
-                <p className="text-sm font-medium mb-10 sm:mb-0">
+                <p className="text-sm font-medium mb-16 lg:mb-0">
                   ${item.quantity * item.price}
                 </p>
               </div>

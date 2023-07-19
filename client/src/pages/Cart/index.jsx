@@ -50,7 +50,7 @@ const Cart = () => {
     <div>
       <img className="w-full h-60 object-cover" src={url} alt={description} />
       {productData.length > 0 ? (
-        <div className="max-w-screen-xl mx-auto py-20 flex flex-col lg:flex-row">
+        <div className="max-w-screen-xl mx-auto py-20 flex flex-col items-center lg:flex-row">
           <CartItem />
           <div className="w-[80%] lg:w-1/3 bg-[#fafafa] py-6 px-4">
             <div className=" flex flex-col gap-4 md:gap-6 border-b-[1px] border-b-gray-400 pb-6">
@@ -74,7 +74,7 @@ const Cart = () => {
             </div>
             <button
               onClick={handleCheckout}
-              className="text-base bg-black text-white w-[200px] xs:w-[250px] md:w-full py-3 mt-6 hover:bg-gray-800 duration-300"
+              className="text-base bg-black text-white w-[200px] xs:w-[250px] lg:w-full py-3 mt-6 hover:bg-gray-800 duration-300"
             >
               {checkout}
             </button>
