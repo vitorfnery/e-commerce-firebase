@@ -20,9 +20,9 @@ const ProductsCard = ({ product }) => {
     });
   };
   return (
-    <div className="group relative">
+    <div className="w-[275px] xs:w-[300px] md:w-[95%] group relative">
       <div
-        className="w-full h-96 cursor-pointer overflow-hidden"
+        className="w-full  h-96 cursor-pointer overflow-hidden"
         onClick={handleDetails}
       >
         <img

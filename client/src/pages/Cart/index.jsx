@@ -50,28 +50,31 @@ const Cart = () => {
     <div>
       <img className="w-full h-60 object-cover" src={url} alt={description} />
       {productData.length > 0 ? (
-        <div className="max-w-screen-xl mx-auto py-20 flex">
+        <div className="max-w-screen-xl mx-auto py-20 flex flex-col lg:flex-row">
           <CartItem />
-          <div className="w-1/3 bg-[#fafafa] py-6 px-4">
-            <div className=" flex flex-col gap-6 border-b-[1px] border-b-gray-400 pb-6">
-              <h2 className="text-2xl font-medium ">{title}</h2>
-              <p className="flex items-center gap-4 text-base">
+          <div className="w-[80%] lg:w-1/3 bg-[#fafafa] py-6 px-4">
+            <div className=" flex flex-col gap-4 md:gap-6 border-b-[1px] border-b-gray-400 pb-6">
+              <h2 className="text-xl lg:text-2xl font-medium ">{title}</h2>
+              <p className="flex items-center gap-2 md:gap-4 text-sm md:text-base">
                 {info1}
-                <span className="font-titleFont font-bold text-lg">
+                <span className="font-titleFont font-bold text-base md:text-lg">
                   ${totalAmt}
                 </span>
               </p>
-              <p className="flex items-start gap-4 text-base">
-                {info2}
-                <span>{shipping}</span>
-              </p>
+              <div className="flex items-start gap-2 md:gap-4">
+                <p className="text-sm md:text-base">{info2}</p>
+                <span className="text-xs w-1/2 xs:w-[60%] sm:w-[70%]">
+                  {shipping}
+                </span>
+              </div>
             </div>
-            <p className="font-titleFont font-semibold flex justify-between mt-6">
-              {total} <span className="text-xl font-bold">${totalAmt}</span>
-            </p>
+            <div className="flex justify-between mt-6 w-[80%]">
+              <p className="font-titleFont font-semibold text-base">{total}</p>
+              <span className="text-lg md:text-xl font-bold">${totalAmt}</span>
+            </div>
             <button
               onClick={handleCheckout}
-              className="text-base bg-black text-white w-full py-3 mt-6 hover:bg-gray-800 duration-300"
+              className="text-base bg-black text-white w-[200px] xs:w-[250px] md:w-full py-3 mt-6 hover:bg-gray-800 duration-300"
             >
               {checkout}
             </button>

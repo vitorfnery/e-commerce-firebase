@@ -24,7 +24,7 @@ const Footer = () => {
   const { btn } = FOOTER_SUBSCRIBE;
   return (
     <div className="bg-black text-primary py-20 font-titleFont">
-      <div className="px-16 py-4 sm:py-7 2xl:max-w-screen-xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-20 gap-y-14">
+      <div className="px-16 lg:px-16 py-4 sm:py-7 2xl:max-w-screen-xl mx-auto grid grid-cols-1  lg:grid-cols-4 gap-x-20 gap-y-14">
         <div className="flex flex-col gap-7">
           <Link to={"/"}>
             <img className="w-12" src={logo} alt="logo" />
@@ -85,7 +85,7 @@ const Footer = () => {
             </p>
           </div>
         </div>
-        <div className="flex flex-col justify-center">
+        <div className="flex flex-col justify-center w-[200px] xs:w-[80%] lg:w-full">
           <input
             className="bg-transparent border px-4 text-sm"
             placeholder="e-mail"
