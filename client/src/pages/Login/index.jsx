@@ -39,14 +39,12 @@ const Login = () => {
         }, 1500);
       })
       .catch((error) => {
-        // Handle Errors here.
         console.log(error);
       });
   };
   const handleSignOut = () => {
     signOut(auth)
       .then(() => {
-        // Sign-out successful.
         toast.success("Log Out Successfully!");
         dispatch(removeUser());
       })
@@ -59,7 +57,7 @@ const Login = () => {
   };
   return (
     <div className="w-full flex flex-col items-center justify-center gap-10 py-20">
-      <div className="w-full flex items-center justify-center gap-10">
+      <div className="w-full flex flex-col xs:flex-row  items-center justify-center gap-5 sm:gap-10">
         <div
           onClick={handleLogin}
           className="text-base w-60 h-12 tracking-wide border-[1px] border-gray-400 rounded-md flex items-center justify-center gap-2 hover:border-blue-600 cursor-pointer duration-300"
@@ -76,7 +74,7 @@ const Login = () => {
           </button>
         )}
       </div>
-      <div className="w-full flex items-center justify-center gap-10">
+      <div className="w-full flex flex-col xs:flex-row items-center justify-center gap-5 sm:gap-10">
         <div
           onClick={githubLogin}
           className="text-base w-60 h-12 tracking-wide border-[1px] border-gray-400 rounded-md flex items-center justify-center gap-2 hover:border-blue-600 cursor-pointer duration-300"
