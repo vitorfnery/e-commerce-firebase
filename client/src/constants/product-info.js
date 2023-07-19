@@ -4,5 +4,8 @@ export const PRODUCT_SINGLE_PAGE = {
     reduce: "-",
     add: "+",
     toChart: "add to chart",
-    category: "Category"
+    category: "Category",
+    review: "(1 Costumer Review)"
 }
+
+export const PRODUCT_SINGLE_STARS = [1, 2, 3, 4, 5]

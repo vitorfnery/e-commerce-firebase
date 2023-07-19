@@ -22,6 +22,7 @@ The project's UI is available here: [React Authentication E-commerce - Vítor F.
 
 - React 
 - Tailwind CSS
+- Redux
 - Firebase
 - Stripe
 - Git and Github
