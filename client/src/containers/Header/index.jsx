@@ -99,6 +99,37 @@ const Header = () => {
               </Link>
             </li>
           ))}
+          <li className="border-b border-gray-600 cursor-pointer p-2">
+            <Link to={"/cart"}>
+              <div className="relative">
+                <PiHandbagSimple className="text-4xl" />
+                <span
+                  className="
+                        absolute w-6 top-3 left-[6.5px] text-xs sm:text-sm 
+                        flex items-center justify-center font-semibold
+                        "
+                >
+                  {productData.length}
+                </span>
+              </div>
+            </Link>
+          </li>
+          <li className="flex gap-3 border-b border-gray-600 cursor-pointer p-2">
+            <Link to={"/login"}>
+              <img
+                className="w-8 h-8 rounded-full"
+                src={userInfo ? userInfo.image : chartImg}
+                alt="userLogo"
+              />
+            </Link>
+            {userInfo && (
+              <div className="flex flex-col justify-center">
+                <p className="text-base font-titleFont font-semibold underline underline-offset-2">
+                  {userInfo.name}
+                </p>
+              </div>
+            )}
+          </li>
         </ul>
       </div>
     </div>
